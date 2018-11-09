@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/assets/css/reset.css"/>
+    <link rel='stylesheet' href='/assets/css/style.css'/>
+    <link rel='stylesheet' href='/assets/css/bootstrap.css'/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+<header>
+    <section class="container"><!-- info -->
+        <div class="row">
+            <article class="col-sm-6" id="infoSide">
+                <article class="topLevelTitle">
+                    <h1 class="title">Plogger</h1>
+                    <h4 class="subtitle">Clean the streets. Show your deeds.</h4>
+                </article>
+                <p class="gray_text">Ploggin is picking litter while jogging. It means you use your feet to clean the
+                    street.</p>
+            </article>
+            <article class="col-sm-6" id="app_side">
+                <img src="/assets/imgs/app.jpg" class="w-50" id="height_app_image"/>
+            </article>
+        </div>
+        <img src="assets/imgs/banner.jpg" class="w-100 h-100" />
+        <section class="app_section">
+            <button class="btn btn-danger" id="app_button"><i class="fab fa-google-play"></i>Get the app now</button>
+            <p class="subtitle" id="app_subtitle">Available in app store.</p>
+        </section>
+    </section>
+</header>
+<main>
+    <section class="container block"><!-- about us -->
+        <div class="row">
+            <article class="col-sm-5">
+                <h3 class="title">Use your feet to clean the street</h3>
+                <p class="subtitle">Take the trash you find to the litter box. Identify the trash cans in your town
+                    where
+                    you want to dump the trash you find en route.</p>
+            </article>
+            <article class="col-sm-2">
+                <img class="img-fluid" src="/assets/imgs/can.png"/>
+            </article>
+            <article class="col-sm-5">
+                <h3 class="title">Get those big trash producers moving too</h3>
+                <p class="subtitle">Without these lovely multinationals we wouldn't be able to plog. Let's thank them
+                    for their generous stream of trash by tagging them in our posts.</p>
+            </article>
+        </div>
+    </section>
+    <section class="container block"><!-- challenges -->
+        <section class="row">
+            <div class="col-lg-12 text-center">
+                <h3 class="title">Challenge yourself</h3>
+                <h4 class="subtitle">Choose different litter runs to keep your routes fresh and the streets clean</h4>
+            </div>
+        </section>
+        <section class="row">
+            <div class="col-sm">
+                <%- include('partials/card.ejs', {imgSrc: '/assets/imgs/run.jpg', cardTitle: 'Free Run', cardText: 'Enjoy your free run! Be inspired by the moment.'}) %>
+            </div>
+            <div class="col-sm">
+                <%- include('partials/card.ejs', {imgSrc: '/assets/imgs/bran.jpg', cardTitle: 'Bran', cardText: 'Had too much sugar? Use your energy to throw the coke cans away.'}) %>
+            </div>
+            <div class="col-sm">
+                <%- include('partials/card.ejs', {imgSrc: '/assets/imgs/park.jpg', cardTitle: 'Park', cardText: 'Tidy up our mucky parks and enjoy the fresh air.'}) %>
+            </div>
+        </section>
+        <section class="row">
+            <div class="col-sm">
+                <%- include('partials/card.ejs', {imgSrc: '/assets/imgs/booze.jpg', cardTitle: 'Booze', cardText: 'Repent for all those drinks you had last night. Pick up beer cans.'}) %>
+            </div>
+            <div class="col-sm">
+                <%- include('partials/card.ejs', {imgSrc: '/assets/imgs/landmark.jpg', cardTitle: 'Landmark', cardText: 'Become an major icon like our greatest landmarks.'}) %>
+            </div>
+            <div class="col-sm">
+                <%- include('partials/card.ejs', {imgSrc: '/assets/imgs/big_bag.jpg', cardTitle: 'Big Bag', cardText: "Take a big bag, run around, fill it up, don't drag!"}) %>
+            </div>
+        </section>
+        <section class="row">
+            <div class="col-sm">
+                <%- include('partials/card.ejs', {imgSrc: '/assets/imgs/group.jpg', cardTitle: 'Group', cardText: 'Challenge your mateys, measure your loot, free run for the highest bidder! Savvy?'}) %>
+            </div>
+        </section>
+    </section>
+    <section><!-- statistics -->
+
+    </section>
+</main>
+<footer>
+    <div class="container">
+        <div class="row">
+            <section class="col-sm-6">
+                <h3 class="title">A CityHacks Bruges Project</h3>
+                <p class="subtitle">At Cityhacks, teams of students in Bruges collaborate to build solutions for a
+                    better Bruges. The teams leverafe open data to bring value to the residents of Bruges</p>
+            </section>
+            <section class="col-sm-6">
+                <article>
+                    <ul>
+                        <img src="/assets/imgs/leefmileu.jpg"/>
+                        <img src="/assets/imgs/brugge.jpg"/>
+                    </ul>
+                </article>
+            </section>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

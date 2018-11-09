@@ -1,0 +1,104 @@
+body {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+header, footer {
+  background-color: #ffffff;
+}
+
+main{
+  padding-top: 50px;
+  background-color: #f8f9fa;
+}
+
+.block{
+  margin-bottom: 30px;
+}
+
+#infoSide{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#app_side{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#height_app_image{
+  height: 90% !important;
+}
+
+.parent{
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+.image1{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.app_section{
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+  align-items: center;
+}
+
+#app_button{
+  margin-right: 30px;
+}
+
+#app_subtitle{
+  margin-bottom: 0;
+}
+
+.challenges{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.cardChallenge{
+  margin: 10px;
+  min-height: 400px;
+  box-shadow: 0 2px 8px 0 #0000004d;
+}
+
+.card_img{
+  width: 100%;
+  height: 230px;
+}
+
+.title{
+  font-style: italic;
+  color: rebeccapurple;
+}
+
+.subtitle{
+  font-style: italic;
+  font-size: large;
+  color: darkgray;
+  font-weight: normal;
+}
+
+.topLevelTitle{
+  padding-bottom: 35px;
+}
+
+.gray_text{
+  color: darkgray;
+}
