@@ -11,10 +11,12 @@ function startRunning() {
                         'x': position.coords.latitude,
                         'y': position.coords.longitude
                     });
+                addMarker(map,  position.coords.latitude, position.coords.longitude, 'route');
 
             });
         } else {
             window.clearInterval(id);
+            console.log("stop")
             for(var i = 0; i<route.length; i++){
                 addMarker(map, route[i].x, route[i].y, 'route');
             }
