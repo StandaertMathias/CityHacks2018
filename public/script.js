@@ -83,7 +83,7 @@ function combineImages() {
             link.click();
         }
     }
-    
+
 }
 
 $(document).ready(function () {
@@ -95,7 +95,6 @@ $(document).ready(function () {
     });
 
     $("#take-picture").change(function () {
-        $('#map').addClass("hidden");
         readURL(this);
     });
 });
