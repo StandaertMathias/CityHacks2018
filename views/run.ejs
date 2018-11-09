@@ -14,9 +14,13 @@
 <div id="map">
 
 </div>
+<img src="" alt="" class="hidden" id="resultImage">
 
 <button id="stop">Stop and Share</button>
-<input type="file" id="take-picture" accept="image/*" class="hidden">
+    <input type="file" id="take-picture" name="picture" accept="image/*" class="hidden">
+    <input type="submit" id="submit" value="Uploaden" class="hidden">
+</form>
+<canvas id="myCanvas" class="hidden" width="500" height="500"></canvas>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="leaflet.js"></script>
 <script src="script.js"></script>

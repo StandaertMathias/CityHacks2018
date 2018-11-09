@@ -2,6 +2,8 @@ let route = [];
 let stop = false;
 let id = 0;
 let map;
+let photos;
+
 function startRunning() {
     id = window.setInterval(function () {
         if (!stop) {
@@ -14,24 +16,17 @@ function startRunning() {
                 addMarker(map,  position.coords.latitude, position.coords.longitude, 'route');
             });
         } else {
+            $('#submit').removeClass('hidden');
             window.clearInterval(id);
             console.log("stop")
             for(var i = 0; i<route.length; i++){
                 addMarker(map, route[i].x, route[i].y, 'route');
             }
-            $('#take-picture').removeClass('hidden')
+            $('#take-picture').removeClass('hidden');
         }
     }, 1000);
 }
 
-$(document).ready(function () {
-    // add code here
-    getLocation();
-    startRunning();
-    $('#stop').on('click', function () {
-        stop = true;
-    })
-});
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -49,7 +44,59 @@ function showPosition(position) {
     addMarker(map, position.coords.latitude, position.coords.longitude, "me")
 }
 
-
 function addMarker(map, x, y, type) {
     L.marker([x, y]).addTo(map);
 }
+
+function readURL(input) {
+    let url = "";
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#resultImage').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+        setTimeout(combineImages,1000);
+    }
+}
+function combineImages(){
+    console.log('hieer')
+    console.log($('#resultImage').attr('src'));
+    var c=document.getElementById("myCanvas");
+    var ctx=c.getContext("2d");
+    var imageObj1 = new Image();
+    var imageObj2 = new Image();
+    var imageObj3 = new Image();
+    imageObj1.src = $('#resultImage').attr('src');
+    imageObj1.onload = function() {
+        ctx.drawImage(imageObj1,0,0, 500, 500);
+        imageObj2.src = "/images/map.jpg";
+        imageObj2.onload = function() {
+            ctx.drawImage(imageObj2, 0, 0, 50, 50);
+            var img = c.toDataURL("image/png");
+            imageObj3.src = "/images/brugge.jpg";
+            imageObj3.onload = function() {
+                ctx.drawImage(imageObj3, 50, 0, 50, 50);
+                var img = c.toDataURL("image/png");
+                document.write('<img src="' + img + '" width="500" height="1000"/>');
+
+            }
+        }
+    };
+}
+
+$(document).ready(function () {
+    // add code here
+    getLocation();
+    startRunning();
+    $('#stop').on('click', function () {
+        stop = true;
+    });
+
+    $("#take-picture").change(function(){
+        $('#map').addClass("hidden");
+        readURL(this);
+    });
+});
