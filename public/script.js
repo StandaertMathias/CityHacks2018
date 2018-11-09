@@ -12,7 +12,6 @@ function startRunning() {
                         'y': position.coords.longitude
                     });
                 addMarker(map,  position.coords.latitude, position.coords.longitude, 'route');
-
             });
         } else {
             window.clearInterval(id);
@@ -20,6 +19,7 @@ function startRunning() {
             for(var i = 0; i<route.length; i++){
                 addMarker(map, route[i].x, route[i].y, 'route');
             }
+            $('#take-picture').removeClass('hidden')
         }
     }, 1000);
 }
