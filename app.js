@@ -9,6 +9,7 @@ const HTTP = require('http');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var siteRouter = require('./routes/site');
 
 const app = express();
 //listen to port 8080
@@ -26,7 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+app.use('/', siteRouter);
 app.use('/users', usersRouter);
 
 app.get("/run", function (req,res) {
