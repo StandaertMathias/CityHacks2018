@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1387a67d-0673-4269-9001-5ed3730fd1b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/leaflet-routing-machine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/run.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/run.ejs" afterDir="false" />
-    </list>
+    <list default="true" id="1387a67d-0673-4269-9001-5ed3730fd1b2" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/run.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="94" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
+            <state relative-caret-position="68">
+              <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -87,9 +82,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#6#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -115,8 +107,8 @@
         <option value="$PROJECT_DIR$/public/javascripts/script.js" />
         <option value="$PROJECT_DIR$/public/style.css" />
         <option value="$PROJECT_DIR$/public/leaflet-routing-machine.js" />
-        <option value="$PROJECT_DIR$/views/run.ejs" />
         <option value="$PROJECT_DIR$/public/script.js" />
+        <option value="$PROJECT_DIR$/views/run.ejs" />
       </list>
     </option>
   </component>
@@ -207,12 +199,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1541761129755</updated>
-      <workItem from="1541761164588" duration="6339000" />
+      <workItem from="1541761164588" duration="6845000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6339000" />
+    <option name="totallyTimeSpent" value="6845000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -273,8 +265,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/run.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="94" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
+        <state relative-caret-position="68">
+          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -282,9 +274,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#6#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
