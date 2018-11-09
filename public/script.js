@@ -13,13 +13,13 @@ function startRunning() {
                         'x': position.coords.latitude,
                         'y': position.coords.longitude
                     });
-                addMarker(map,  position.coords.latitude, position.coords.longitude, 'route');
+                addMarker(map, position.coords.latitude, position.coords.longitude, 'route');
             });
         } else {
             $('#submit').removeClass('hidden');
             window.clearInterval(id);
             console.log("stop")
-            for(var i = 0; i<route.length; i++){
+            for (var i = 0; i < route.length; i++) {
                 addMarker(map, route[i].x, route[i].y, 'route');
             }
             $('#take-picture').removeClass('hidden');
@@ -59,35 +59,31 @@ function readURL(input) {
 
         reader.readAsDataURL(input.files[0]);
         console.log('hieer1');
-        window.setTimeout(combineImages,1000);
+        window.setTimeout(combineImages, 1000);
     }
 }
-function combineImages(){
+
+function combineImages() {
     console.log('hieer2');
     console.log($('#resultImage').attr('src'));
-    var c=document.getElementById("myCanvas");
-    var ctx=c.getContext("2d");
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
     var imageObj1 = new Image();
     var imageObj2 = new Image();
     var imageObj3 = new Image();
     imageObj1.src = $('#resultImage').attr('src');
-    imageObj1.onload = function() {
-        ctx.drawImage(imageObj1,0,0, 500, 500);
-        imageObj2.src = "/images/map.jpg";
-        imageObj2.onload = function() {
+    imageObj1.onload = function () {
+        ctx.drawImage(imageObj1, 0, 0, 500, 500);
+        imageObj2.src = "/images/brugge.jpg";
+        imageObj2.onload = function () {
             ctx.drawImage(imageObj2, 0, 0, 50, 50);
-            var img = c.toDataURL("image/png");
-            imageObj3.src = "/images/brugge.jpg";
-            imageObj3.onload = function() {
-                ctx.drawImage(imageObj3, 50, 0, 50, 50);
-                var link = document.createElement("a");
-                link.download = "Yield_Map.png";
-                link.href = c.toDataURL('image/png');
-                link.click();
-
-            }
+            var link = document.createElement("a");
+            link.download = "Yield_Map.png";
+            link.href = c.toDataURL('image/png');
+            link.click();
         }
-    };
+    }
+    
 }
 
 $(document).ready(function () {
@@ -98,7 +94,7 @@ $(document).ready(function () {
         stop = true;
     });
 
-    $("#take-picture").change(function(){
+    $("#take-picture").change(function () {
         $('#map').addClass("hidden");
         readURL(this);
     });
