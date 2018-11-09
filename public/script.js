@@ -58,11 +58,12 @@ function readURL(input) {
         }
 
         reader.readAsDataURL(input.files[0]);
-        setTimeout(combineImages,1000);
+        console.log('hieer1');
+        window.setTimeout(combineImages,1000);
     }
 }
 function combineImages(){
-    console.log('hieer')
+    console.log('hieer2');
     console.log($('#resultImage').attr('src'));
     var c=document.getElementById("myCanvas");
     var ctx=c.getContext("2d");
@@ -79,8 +80,10 @@ function combineImages(){
             imageObj3.src = "/images/brugge.jpg";
             imageObj3.onload = function() {
                 ctx.drawImage(imageObj3, 50, 0, 50, 50);
-                var img = c.toDataURL("image/png");
-                document.write('<img src="' + img + '" width="500" height="1000"/>');
+                var link = document.createElement("a");
+                link.download = "Yield_Map.png";
+                link.href = c.toDataURL('image/png');
+                link.click();
 
             }
         }
