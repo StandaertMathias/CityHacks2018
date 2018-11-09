@@ -4,10 +4,17 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
+const HTTP = require('http');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var app = express();
+const app = express();
+//listen to port 8080
+const http = HTTP.createServer(app);
+http.listen(8080);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
