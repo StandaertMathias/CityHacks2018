@@ -2,7 +2,7 @@ let route = [];
 let stop = false;
 let id = 0;
 let map;
-let photos;
+
 
 function startRunning() {
     id = window.setInterval(function () {
@@ -64,13 +64,11 @@ function readURL(input) {
 }
 
 function combineImages() {
-    console.log('hieer2');
     console.log($('#resultImage').attr('src'));
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
     var imageObj1 = new Image();
     var imageObj2 = new Image();
-    var imageObj3 = new Image();
     imageObj1.src = $('#resultImage').attr('src');
     imageObj1.onload = function () {
         ctx.drawImage(imageObj1, 0, 0, 500, 500);
