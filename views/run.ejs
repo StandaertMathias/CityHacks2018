@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -12,12 +13,37 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="mt-3 row justify-content-center">Running</h1>
+    <h1 class="mt-3 row justify-content-center">Choose your challenge!</h1>
 
+    <div id="challenges" class="showing">
+        <div><h2>Free Run</h2>
+            <p>Enjoy your free run! Be inspired by the moment.</p>
+            <a href="" data-challenge="free">Pick this challenge</a>
+        </div>
+        <div><h2>Brands</h2>
+            <p>Had too much sugar? Use your energy to throw the coke cans away.</p>
+            <a href="" data-challenge="brands">Pick this challenge</a></div>
+        <div><h2>Park</h2>
+            <p>Tidy up our mucky parks and enjoy the fresh air.</p>
+            <a href="" data-challenge="park">Pick this challenge</a></div>
+        <div><h2>Booze</h2>
+            <p>Repent for all those drinks you had last night. Pick up beer cans.</p>
+            <a href="" data-challenge="booze">Pick this challenge</a></div>
+        <div><h2>Landmark</h2>
+            <p>Become an major icon like our greatest landmarks.</p>
+            <a href="" data-challenge="landmark">Pick this challenge</a></div>
+        <div><h2>Big Bag</h2>
+            <p>Take a big bag, run around, fill it up, don't drag!</p>
+            <a href="" data-challenge="big">Pick this challenge</a></div>
+        <div><h2>Group</h2>
+            <p>Challenge your mateys, measure your loot, free run for the highest bidder! Savvy?</p>
+            <a href="" data-challenge="group">Pick this challenge</a></div>
+    </div>
     <div class="mt-5 row" id="map">
     </div>
     <div class="mt-5 row justify-content-center">
-        <button type="button" class="btn btn-primary btn-lg btn-block" id="stop">Stop and Share</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block hidden" id="skip">Skip</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block hidden" id="stop">Plog!</button>
         <img src="" alt="" class="hidden" id="resultImage">
         <input type="file" id="take-picture" name="picture" accept="image/*" class="hidden">
     </div>
@@ -27,10 +53,15 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script type="text/javascript" src="leaflet.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="leaflet-src.js"></script>
 <script type="text/javascript" src="leaflet-image.js"></script>
+<script src="afvalmanden.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
