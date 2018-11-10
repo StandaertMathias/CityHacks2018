@@ -1,7 +1,10 @@
+
 body {
-  padding-top: 50px;
+  padding-top: 10px;
   padding-bottom: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  font-family: 'Fira Sans', sans-serif;
+  color: #67696e;
 }
 
 a {
@@ -12,9 +15,37 @@ header, footer {
   background-color: #ffffff;
 }
 
+p.lead { font-size: 1.75rem; }
+p.lead-md { font-size: 1.25rem; }
+
+
+h1, h2, h3, h4 { 
+  font-family: 'Zilla Slab', serif; 
+  font-weight: 700;
+  font-style: italic;
+  color: #741448;
+}
+
+h2 {
+  font-size: 2.75rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
 main{
   padding-top: 50px;
   background-color: #f8f9fa;
+}
+
+#logo {
+  width: 15rem;
+}
+
+#intro {
+ background: transparent url('/assets/imgs/banner.jpg') no-repeat bottom;
+ background-size: contain;
 }
 
 .block{
@@ -54,7 +85,7 @@ main{
 .app_section{
   display: flex;
   flex-direction: row;
-  padding: 30px;
+  padding: 0 2rem 3rem 0;
   align-items: center;
 }
 
@@ -73,9 +104,16 @@ main{
 }
 
 .cardChallenge{
-  margin: 10px;
-  min-height: 400px;
-  box-shadow: 0 2px 8px 0 #0000004d;
+  min-height: 415px;
+}
+
+.partnerlogos img {
+  max-height: 4.5rem;
+  margin-bottom: 1rem;
+}
+
+#runs .card {
+  margin-bottom: 1.5rem;
 }
 
 .card_img{
@@ -83,9 +121,8 @@ main{
   height: 230px;
 }
 
-.title{
-  font-style: italic;
-  color: rebeccapurple;
+.card-body h3 {
+  line-height: 1.5rem;
 }
 
 .subtitle{
@@ -93,10 +130,6 @@ main{
   font-size: large;
   color: darkgray;
   font-weight: normal;
-}
-
-.topLevelTitle{
-  padding-bottom: 35px;
 }
 
 .gray_text{
