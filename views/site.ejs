@@ -2,6 +2,7 @@
 <html>
 <head>
     <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/assets/css/reset.css"/>
     <link rel='stylesheet' href='/assets/css/style.css'/>
     <link rel='stylesheet' href='/assets/css/bootstrap.css'/>
@@ -26,7 +27,7 @@
         </div>
         <img src="assets/imgs/banner.jpg" class="w-100 h-100" />
         <section class="app_section">
-            <button class="btn btn-danger" id="app_button"><i class="fab fa-google-play"></i>Get the app now</button>
+            <button onclick="window.location.href='/run'" class="btn btn-danger" id="app_button"><i class="fab fa-google-play"></i>Get the app now</button>
             <p class="subtitle" id="app_subtitle">Available in app store.</p>
         </section>
     </section>
