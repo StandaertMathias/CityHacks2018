@@ -4,6 +4,19 @@
 .hidden{
   display: none;
 }
+.showing{
+  display: flex;
+  flex-direction: row;
+}
 .show{
   display: block;
+}
+#challenges{
+  overflow-x:scroll
+}
+#challenges div{
+  border: 1px solid black;
+  min-width: 300px;
+  padding: 20px;
+
 }

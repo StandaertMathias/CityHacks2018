@@ -2,8 +2,29 @@ let route = [];
 let stop = false;
 let id = 0;
 let map;
+let challenge = '';
+var yourIcon = L.icon({
+    iconUrl: '/images/marker-icon.png',
+    iconSize: [25, 25],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76],
+    clickable: true
+});
+var trashIcon = L.icon({
+    iconUrl: '/images/trash-icon.png',
+    iconSize: [25, 25],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76],
+    clickable: true
+});
 
-
+var selectedTrashIcon = L.icon({
+    iconUrl: '/images/marker_trashcan_picked.png',
+    iconSize: [25, 25],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76],
+    clickable: true
+});
 function startRunning() {
     id = window.setInterval(function () {
         if (!stop) {
@@ -18,11 +39,12 @@ function startRunning() {
         } else {
             $('#submit').removeClass('hidden');
             window.clearInterval(id);
-            console.log("stop")
+            console.log("stop");
             for (var i = 0; i < route.length; i++) {
                 addMarker(map, route[i].x, route[i].y, 'route');
             }
             $('#take-picture').removeClass('hidden');
+            $('#take-picture').click();
         }
     }, 1000);
 }
@@ -41,11 +63,15 @@ function showPosition(position) {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-    addMarker(map, position.coords.latitude, position.coords.longitude, "me")
+    addMarker(map, position.coords.latitude, position.coords.longitude, "me");
+
+
+    loadTrash();
 }
 
 function addMarker(map, x, y, type) {
-    L.marker([x, y]).addTo(map);
+    var marker = L.marker([x, y],{icon: yourIcon}).on('click', function(e) {alert(e.latlng)});
+    marker.addTo(map);
 }
 
 function readURL(input) {
@@ -75,6 +101,8 @@ function combineImages() {
         imageObj2.src = "/images/brugge.jpg";
         imageObj2.onload = function () {
             ctx.drawImage(imageObj2, 0, 0, 50, 50);
+            ctx.font = "30px Lucida Grande";
+            ctx.fillText(`${challenge} challenge`,100,40);
             var link = document.createElement("a");
             link.download = "Yield_Map.png";
             link.href = c.toDataURL('image/png');
@@ -84,10 +112,47 @@ function combineImages() {
 
 }
 
-$(document).ready(function () {
-    // add code here
+
+
+function loadTrash() {
+    afvalmanden = afvalmanden.filter(x=>x.json_geometry !== undefined);
+    for (var i = 0; i < afvalmanden.length; i++) {
+        //addMarker(map,afvalmanden[i].json_geometry.coordinates[1], afvalmanden[i].json_geometry.coordinates[0], "trash");
+        let marker = L.marker([afvalmanden[i].json_geometry.coordinates[1], afvalmanden[i].json_geometry.coordinates[0]],{icon: trashIcon}).addTo(map)
+        marker.on('click', function(e) {
+            var layer = e.target;
+            layer.setIcon(selectedTrashIcon);
+            console.log("clicked");
+            $('h1').text("start running");
+            $('#skip').addClass("hidden");
+            $('#stop').removeClass("hidden");
+        });
+    }
+}
+
+function chooseChallenge(e) {
+    e.preventDefault();
+    challenge = $(this).data('challenge');
+    $('h1').text("choose your destination");
+    $('#challenges').removeClass("showing");
+    $('#challenges').addClass("hidden");
+    $('#map').removeClass("hidden");
+    $('#skip').removeClass("hidden");
     getLocation();
     startRunning();
+    console.log($(this))
+}
+
+$(document).ready(function () {
+    // add code here
+
+
+
+    $('#skip').on('click', function () {
+        $('#skip').addClass("hidden");
+        $('#stop').removeClass("hidden");
+        $('h1').text("start running");
+    });
     $('#stop').on('click', function () {
         stop = true;
     });
@@ -95,4 +160,5 @@ $(document).ready(function () {
     $("#take-picture").change(function () {
         readURL(this);
     });
+    $('#challenges a').on('click', chooseChallenge)
 });
