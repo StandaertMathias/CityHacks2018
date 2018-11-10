@@ -52,12 +52,6 @@ main{
   margin-bottom: 30px;
 }
 
-#infoSide{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 #app_side{
   display: flex;
   justify-content: center;
@@ -132,7 +126,7 @@ main{
   font-weight: normal;
 }
 
-@media (max-width: 576px) { 
+@media (max-width: 768px) { 
 
   #intro { background: none; }
   #app_side { margin-bottom: 3rem; }
@@ -140,8 +134,8 @@ main{
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-
+@media (max-width: 768px) { 
+  
 }
 
 // Large devices (desktops, 992px and up)
@@ -150,6 +144,6 @@ main{
 }
 
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-
+@media (min-width: 1000px) { 
+  #infoSide { min-height: 53rem; }
 }
