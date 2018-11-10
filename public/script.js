@@ -101,6 +101,10 @@ function combineImages() {
         imageObj2.src = "/images/brugge.jpg";
         imageObj2.onload = function () {
             ctx.drawImage(imageObj2, 0, 0, 50, 50);
+            ctx.fillStyle="white";
+            ctx.fillRect(75,5,250,65);
+            ctx.stroke();
+            ctx.fillStyle="black";
             ctx.font = "30px Lucida Grande";
             ctx.fillText(`${challenge} challenge`,100,40);
             var link = document.createElement("a");
