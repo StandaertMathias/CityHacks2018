@@ -116,7 +116,8 @@ function combineImages() {
             link.click();
             $('#map').addClass('hidden');
             $('#stop').addClass('hidden');
-            $('#blameCompanies').removeClass('hidden')
+            $('#blameCompanies').removeClass('hidden');
+            $('#take-picture').addClass('hidden');
         }
     }
 
@@ -161,6 +162,7 @@ $(document).ready(function () {
         $('#map').addClass('hidden');
         $('#challenges').removeClass('hidden');
         $('#stop').addClass('hidden')
+        $('#blameCompanies').addClass('hidden');
     });
 
     $('#skip').on('click', function () {
