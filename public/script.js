@@ -104,12 +104,12 @@ function combineImages() {
         imageObj2.src = "/images/brugge.jpg";
         imageObj2.onload = function () {
             ctx.drawImage(imageObj2, 0, 0, 50, 50);
-            ctx.fillStyle = "red";
+            ctx.fillStyle = "#741448";
             ctx.fillRect(50, 0, 250, 50);
             ctx.stroke();
             ctx.fillStyle = "white";
-            ctx.font = "30px Lucida Grande";
-            ctx.fillText(`${challenge} challenge`, 75, 35);
+            ctx.font = "30px Arial";
+            ctx.fillText(`${challenge} run`, 75, 35);
             var link = document.createElement("a");
             link.download = "Yield_Map.png";
             link.href = c.toDataURL('image/png');
@@ -133,7 +133,7 @@ function loadTrash() {
             var layer = e.target;
             layer.setIcon(selectedTrashIcon);
             console.log("clicked");
-            $('h1').text("start running");
+            $('h2').text("start running");
             $('#skip').addClass("hidden");
             $('#stop').removeClass("hidden");
         });
@@ -143,7 +143,7 @@ function loadTrash() {
 function chooseChallenge(e) {
     e.preventDefault();
     challenge = $(this).data('challenge');
-    $('h1').text("choose your destination");
+    $('h2').text("choose your destination");
     $('#challenges').removeClass("showing");
     $('#challenges').addClass("hidden");
     $('#map').removeClass("hidden");
@@ -168,7 +168,7 @@ $(document).ready(function () {
     $('#skip').on('click', function () {
         $('#skip').addClass("hidden");
         $('#stop').removeClass("hidden");
-        $('h1').text("start running");
+        $('h2').text("start running");
     });
     $('#stop').on('click', function () {
         stop = true;

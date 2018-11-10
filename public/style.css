@@ -1,3 +1,23 @@
+body{
+  font-family: 'Zilla Slab', serif;
+}
+h1, h2, a{
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+    font-style: italic;
+}
+h1{
+    font-size: 4rem;
+    color: rebeccapurple;
+    font-weight: bold;
+}
+a{
+    color: rebeccapurple;
+}
+#challenge{
+  margin-bottom: 20px;
+}
 #map {
   height: 300px;
 }
@@ -12,36 +32,56 @@
   display: block;
 }
 #challenges{
-  overflow-x:scroll;
+
 }
 #challenges .challenge{
+  display: inline-block;
+  margin-right: 20px;
   border: 1px solid black;
-  min-width: 300px;
-  padding: 20px;
-  display:flex;
+  max-width: 300px;
   flex-direction: row;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 8px 0 #0000004d;
 }
 .challenge div{
   display: block;
-  padding-right: 10px;
-  max-width: 250px;
+  padding-left: 10px;
+  max-width: 300px;
+  min-width: 300px;
 }
 #challenges img{
-  max-height: 250px;
-  margin-top: 20px;
+  max-width: 295px;
+  max-height: 200px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 h2{
-  font-size: 2rem;
+  font-size: 3rem;
+    text-align: center;
+    margin-bottom: 10px;
+    color: grey;
 }
 p{
   font-size: 1.5rem;
 }
 a{
   font-size: 1.5rem;
+  font-style: italic;
 }
 label{
   font-size: 1.5rem;
 }
 input[type=checkbox]{
   margin-left: 20px;
+}
+.head{
+  font-size: 3rem;
+  display: block;
+}
+.sub{
+  font-size: 2rem;
+  margin-top: 0px;
 }
