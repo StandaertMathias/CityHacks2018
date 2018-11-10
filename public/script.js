@@ -25,6 +25,7 @@ var selectedTrashIcon = L.icon({
     popupAnchor: [-3, -76],
     clickable: true
 });
+
 function startRunning() {
     id = window.setInterval(function () {
         if (!stop) {
@@ -70,7 +71,9 @@ function showPosition(position) {
 }
 
 function addMarker(map, x, y, type) {
-    var marker = L.marker([x, y],{icon: yourIcon}).on('click', function(e) {alert(e.latlng)});
+    var marker = L.marker([x, y], {icon: yourIcon}).on('click', function (e) {
+        alert(e.latlng)
+    });
     marker.addTo(map);
 }
 
@@ -101,32 +104,31 @@ function combineImages() {
         imageObj2.src = "/images/brugge.jpg";
         imageObj2.onload = function () {
             ctx.drawImage(imageObj2, 0, 0, 50, 50);
-            ctx.fillStyle="white";
-            ctx.fillRect(75,5,250,65);
+            ctx.fillStyle = "white";
+            ctx.fillRect(75, 5, 250, 65);
             ctx.stroke();
-            ctx.fillStyle="black";
+            ctx.fillStyle = "black";
             ctx.font = "30px Lucida Grande";
-            ctx.fillText(`${challenge} challenge`,100,40);
+            ctx.fillText(`${challenge} challenge`, 100, 40);
             var link = document.createElement("a");
             link.download = "Yield_Map.png";
             link.href = c.toDataURL('image/png');
             link.click();
             $('#map').addClass('hidden');
-            $('#challenges').removeClass('hidden');
-            $('#stop').addClass('hidden')
+            $('#stop').addClass('hidden');
+            $('#blameCompanies').removeClass('hidden')
         }
     }
 
 }
 
 
-
 function loadTrash() {
-    afvalmanden = afvalmanden.filter(x=>x.json_geometry !== undefined);
+    afvalmanden = afvalmanden.filter(x => x.json_geometry !== undefined);
     for (var i = 0; i < afvalmanden.length; i++) {
         //addMarker(map,afvalmanden[i].json_geometry.coordinates[1], afvalmanden[i].json_geometry.coordinates[0], "trash");
-        let marker = L.marker([afvalmanden[i].json_geometry.coordinates[1], afvalmanden[i].json_geometry.coordinates[0]],{icon: trashIcon}).addTo(map)
-        marker.on('click', function(e) {
+        let marker = L.marker([afvalmanden[i].json_geometry.coordinates[1], afvalmanden[i].json_geometry.coordinates[0]], {icon: trashIcon}).addTo(map)
+        marker.on('click', function (e) {
             var layer = e.target;
             layer.setIcon(selectedTrashIcon);
             console.log("clicked");
@@ -153,7 +155,13 @@ function chooseChallenge(e) {
 $(document).ready(function () {
     // add code here
 
-
+    $('#submitCompanies').on('click',function (e) {
+        e.preventDefault();
+        console.log("blame")
+        $('#map').addClass('hidden');
+        $('#challenges').removeClass('hidden');
+        $('#stop').addClass('hidden')
+    });
 
     $('#skip').on('click', function () {
         $('#skip').addClass("hidden");
