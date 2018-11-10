@@ -5,14 +5,14 @@ let map;
 let challenge = '';
 var yourIcon = L.icon({
     iconUrl: '/images/marker-icon.png',
-    iconSize: [25, 25],
+    iconSize: [65, 65],
     iconAnchor: [22, 94],
     popupAnchor: [-3, -76],
     clickable: true
 });
 var trashIcon = L.icon({
     iconUrl: '/images/trash-icon.png',
-    iconSize: [25, 25],
+    iconSize: [65, 65],
     iconAnchor: [22, 94],
     popupAnchor: [-3, -76],
     clickable: true
@@ -20,7 +20,7 @@ var trashIcon = L.icon({
 
 var selectedTrashIcon = L.icon({
     iconUrl: '/images/marker_trashcan_picked.png',
-    iconSize: [25, 25],
+    iconSize: [65, 65],
     iconAnchor: [22, 94],
     popupAnchor: [-3, -76],
     clickable: true
@@ -45,6 +45,7 @@ function startRunning() {
                 addMarker(map, route[i].x, route[i].y, 'route');
             }
             $('#take-picture').removeClass('hidden');
+            $('#stop').addClass('hidden');
             $('#take-picture').click();
         }
     }, 1000);
@@ -60,7 +61,7 @@ function getLocation() {
 }
 
 function showPosition(position) {
-    map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 15);
+    map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 16);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
