@@ -132,12 +132,10 @@ main{
   font-weight: normal;
 }
 
-.gray_text{
-  color: darkgray;
-}
+@media (max-width: 576px) { 
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
+  #intro { background: none; }
+  #app_side { margin-bottom: 3rem; }
 
 }
 
