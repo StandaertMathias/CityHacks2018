@@ -105,7 +105,7 @@ function combineImages() {
         imageObj2.onload = function () {
             ctx.drawImage(imageObj2, 0, 0, 50, 50);
             ctx.fillStyle = "red";
-            ctx.fillRect(50, 1, 250, 50);
+            ctx.fillRect(50, 0, 250, 50);
             ctx.stroke();
             ctx.fillStyle = "white";
             ctx.font = "30px Lucida Grande";
