@@ -1,5 +1,6 @@
 body{
   font-family: 'Zilla Slab', serif;
+    font-size: 2rem;
 }
 h1, h2, a{
   font-weight: bold;
@@ -91,4 +92,22 @@ input[type=checkbox]{
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+#skip,#stop, input[type=submit] {
+    font-size: 2rem;
+    background-color: grey;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+#blameCompanies{
+    margin: 10px;
+}
+label{
+    font-size: 2rem;
+    margin-left: 50px;
+}
+input[type="checkbox"]{
+    height: 25px;
+    width: 25px;
 }

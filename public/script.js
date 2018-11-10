@@ -117,6 +117,7 @@ function combineImages() {
             $('#map').addClass('hidden');
             $('#stop').addClass('hidden');
             $('#blameCompanies').removeClass('hidden');
+            $('h2').text("tag the companies you collected!");
             $('#take-picture').addClass('hidden');
         }
     }
