@@ -100,16 +100,16 @@ function combineImages() {
     var imageObj2 = new Image();
     imageObj1.src = $('#resultImage').attr('src');
     imageObj1.onload = function () {
-        ctx.drawImage(imageObj1, 0, 0, 500, 500);
+        ctx.drawImage(imageObj1, 0, 0, 400, 500);
         imageObj2.src = "/images/brugge.jpg";
         imageObj2.onload = function () {
             ctx.drawImage(imageObj2, 0, 0, 50, 50);
-            ctx.fillStyle = "white";
-            ctx.fillRect(75, 5, 250, 65);
+            ctx.fillStyle = "red";
+            ctx.fillRect(50, 0, 250, 50);
             ctx.stroke();
-            ctx.fillStyle = "black";
+            ctx.fillStyle = "white";
             ctx.font = "30px Lucida Grande";
-            ctx.fillText(`${challenge} challenge`, 100, 40);
+            ctx.fillText(`${challenge} challenge`, 75, 35);
             var link = document.createElement("a");
             link.download = "Yield_Map.png";
             link.href = c.toDataURL('image/png');
