@@ -111,6 +111,9 @@ function combineImages() {
             link.download = "Yield_Map.png";
             link.href = c.toDataURL('image/png');
             link.click();
+            $('#map').addClass('hidden');
+            $('#challenges').removeClass('hidden');
+            $('#stop').addClass('hidden')
         }
     }
 

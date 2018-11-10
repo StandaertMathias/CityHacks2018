@@ -5,21 +5,37 @@
   display: none;
 }
 .showing{
-  display: flex;
+  display: block;
   flex-direction: row;
 }
 .show{
   display: block;
 }
 #challenges{
-  overflow-x:scroll
+  overflow-x:scroll;
 }
-#challenges div{
+#challenges .challenge{
   border: 1px solid black;
   min-width: 300px;
   padding: 20px;
+  display:flex;
+  flex-direction: row;
+}
+.challenge div{
+  display: block;
+  padding-right: 10px;
+  max-width: 250px;
 }
 #challenges img{
-  max-width: 250px;
+  max-height: 250px;
   margin-top: 20px;
+}
+h2{
+  font-size: 2rem;
+}
+p{
+  font-size: 1.5rem;
+}
+a{
+  font-size: 1.5rem;
 }
